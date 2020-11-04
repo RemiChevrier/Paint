@@ -1,0 +1,104 @@
+Environnement
+=============
+
+Récupérer le sujet sous le repertoire : /home/TP/modules/sujets/CAI/Qt5/Qt5_Labo
+
+dans un repertoire de travail de binômes (Dupond et Dupont) :
+
+cp -r /home/TP/modules/sujets/CAI/Qt5/Qt5_Labo $HOME/.../Dupond_Dupont_Qt5_Labo
+
+Objectifs du TP
+===============
+
+Création d'un éditeur graphique avec les fonctionnalites de base  pour realiser de maniere la plus interactive possible un dessin avec des items sélectionnables et déplaçables.
+
+A la fin des séances de labos, l'utilisateur de votre IHM doit pouvoir tracer, sauvegarder, charger un dessin à base d'objets graphiques (lignes,ellipses, rectangles, polygones et textes) déplaçables dont on pourra selectionner interactivement les caractéristiques de contours et le mode de remplissage.
+
+Toutes les actions possibles sur l'IHM doivent être récensées dans la barre de menu.
+Les actions les plus fréquentes seront représentées dans la barre d'outils.
+L'utilisateur de l'IHM doit pouvoir sélectionner les actions possibles sur la zone cliente à l'aide d'un menu surgissant.
+
+Toute action irréversible devra avertir l'utilisateur avec des boîtes de dialogues.
+
+IHM Editeur graphique 
+=====================
+
+Doit contenir les actions :
+  - dans la barre d'actions (toutes les actions possibles)
+  - dans la barre d'outils (les actions les plus courantes)
+  - dans la zone cliente avec menu surgissant (les actions sur la zone client)
+
+Selection d'actions (mainwindow.py)
+===================================
+
+File : New (Warning dialog)
+       ------------
+       Open
+       Save        (File selection dialog)
+       Save As
+       -----------
+       Exit (Question dialog)
+
+Tools : Line
+        Rectangle
+        Ellipse
+        Polygon
+        ----------
+        text 
+Style : Pen (submenu)
+          color  (Color selection  dialog)
+          line   (submenu) (QPen : mode solidLine, DotLine, DotDashLine ...
+          width  (submenu or dialog)
+        Brush (submenu)
+          color  (Color selection  dialog)
+          fill (submenu or dialog))(QBrush  : mode solidPattern VerticalPattern ...
+       Font (Font selection dialog)
+ 
+Help : About Us (Information dialog : Noms et Prenoms)
+       About Qt (Information dialog sur Qt/PyQt)
+       About the Application  (Information dialog : README)
+
+Popup : Tools  (cf Tools de la barre d'actions )
+        Style  (cf Style de la barre d'actions )
+        ---------
+        Erase (Warning dialog)
+
+
+Interaction (scene.py)
+======================
+
+Trace elastique : sans remplissage
+
+Trace final  : item graphique avec les styles selectionnes
+
+Selection et deplacement  : 
+  - d'un item graphique
+  - d'un groupe d'items graphiques
+
+README.txt
+==========
+Documentation sur :
+   - l'installation
+   - l'utilisation de l'IHM
+       - aide sur le tracé de dessin (polygone par exemple)
+   - problemes eventuels rencontres.
+
+Ce README apparait aussi dans le menu d'aide
+
+CONSIGNES
+=========
+En fin de chaque séance (17:30 au plus tard), creer une archive de version : 
+
+  - tar zcvf Dupond_Dupont_Qt5_Labo.tgz Dupond_Dupont_Qt5_Labo/
+
+Copier l'archive dans le repertoire de rendu de TP :
+
+  - cp Dupond_Dupont_Qt5_Labo.tgz /home/TP/TPrendu/nedelec/CAI/PyQt5/.
+
+L'archive ne contiendra que le CODE SOURCE (*.py) et les données necessaire au projet :
+ 
+  - icons/*.png 
+  - Data/*.json 
+  - ....
+
+
